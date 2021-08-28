@@ -48,7 +48,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Band Names',
+          'Encuestas App Carlos Beltrán',
           style: TextStyle(color: Colors.black),
           textAlign: TextAlign.right,
         ),
@@ -170,6 +170,7 @@ class _HomePageState extends State<HomePage> {
   Widget _showGraph() {
     Map<String, double> dataMap = new Map();
     // dataMap.putIfAbsent('Flutter', () => 5);
+
     bands.forEach((band) {
       dataMap.putIfAbsent(band.name, () => band.votes.toDouble());
     });
@@ -188,17 +189,17 @@ class _HomePageState extends State<HomePage> {
       Colors.grey,
     ];
 
-    return Container(
+    return SingleChildScrollView(
         padding: EdgeInsets.only(top: 10),
-        width: double.infinity,
-        height: 200,
+        // width: double.infinity,
+        // height: 200,
         child: PieChart(
           dataMap: dataMap,
           animationDuration: Duration(milliseconds: 800),
           showChartValuesInPercentage: true,
           showChartValues: true,
           showChartValuesOutside: false,
-          chartValueBackgroundColor: Colors.grey[200],
+          chartValueBackgroundColor: Colors.amberAccent[200],
           colorList: colorList,
           showLegends: true,
           decimalPlaces: 0,
